@@ -16,3 +16,7 @@ def test_home_status_code(response):
 
 def test_titulo_home(response):
     assert_contains(response, '<title>home')
+
+
+def test_link_home(response):
+    assert_contains(response, f'<a class="nav-link active" aria-current="page" href="{reverse("base:home")}">Home</a>')
