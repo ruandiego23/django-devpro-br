@@ -25,6 +25,13 @@ SECRET_KEY = 'django-insecure-0b8k^k6a%td#4gu%0-oe0k*h6r+78le!zal_nm(37@y*f6)gq9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Usuário customizado para que ele tenha acesso ao site por o seu email
+AUTH_USER_MODEL = 'base.User'
+
+LOGIN_URL = '/contas/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
 ALLOWED_HOSTS = []
 
 

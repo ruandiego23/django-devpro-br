@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}login{% endblock %}
+{% block description %}Faça o login no DevPro{% endblock %}
+
+{% block content %}
+    <div class="row mt-sm-5">
+        <div class="col-sm offset-sm-2">
+            <div class="container mt-sm-5">
+                {% if form.errors %}
+                    <p>Teu email e senha não corresponderam. Por favor, tente novamente.</p>
+                {% endif %}
+
+                {% if next %}
+                    {% if user.is_authenticated %}
+                        <p>Sua conta não tem acesso à essa página. Para continuar,
+                            entre com uma conta válida.</p>
+                    {% else %}
+                        <p>Por favor login para ver essa página.</p>
+                    {% endif %}
+                {% endif %}
+
+                <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <table>
+                        <tr>
+                            <td>{{ form.username.label_tag }}</td>
+                            <td>{{ form.username }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ form.password.label_tag }}</td>
+                            <td>{{ form.password }}</td>
+                        </tr>
+                    </table>
+
+                    <input class="mt-sm-1" type="submit" value="login">
+                    <input type="hidden" name="next" value="{{ next }}">
+                </form>
+
+                {# Assumes you set up the password_reset view in your URLconf #}
+                <p class="mt-sm-4"><a href="{% url 'password_reset' %}">Esqueceu a senha?</a></p>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
