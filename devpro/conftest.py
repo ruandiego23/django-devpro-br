@@ -1,5 +1,5 @@
 """
-Com o arquivo conftest.py, o Django pode acessar esses testes em quaisquer apps
+Com o arquivo conftest.py, o pytest-django pode acessar esses testes em quaisquer apps
 """
 import pytest
 
