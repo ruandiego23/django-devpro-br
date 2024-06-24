@@ -1,6 +1,6 @@
 {% extends 'base/base.html' %}
-{% block title %}modulos{% endblock %}
-{% block description %}Índice de módulos{% endblock %}
+{% block title %}módulos{% endblock %}
+{% block description %}Página com seus módulos e respectivas aulas{% endblock %}
 
 {% block content %}
     <div class="container">
@@ -17,6 +17,8 @@
                     <ol>
                         {% for aula in aulas %}
                         <li><a class="mt-sm-2 mb-sm-2" href="{{ aula.get_absolute_url }}">{{ aula.titulo }}</a></li>
+                        {% empty %}
+                            <li><a class="mt-sm-2 mb-sm-2">Sem aulas</a></li>
                         {% endfor %}
                     </ol>
                 
