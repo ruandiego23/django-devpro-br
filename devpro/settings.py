@@ -25,14 +25,16 @@ SECRET_KEY = 'django-insecure-0b8k^k6a%td#4gu%0-oe0k*h6r+78le!zal_nm(37@y*f6)gq9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# Usuário customizado para que ele tenha acesso ao site por o seu email
+# Para poder usar o User customizado, ao invés do django.contrib.auth, é necessário declarar a variável AUTH_USER_MODEL
 AUTH_USER_MODEL = 'base.User'
 
-LOGIN_URL = '/contas/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+]
 
 
 # Application definition
@@ -45,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'devpro.base.apps.BaseConfig',
+    'devpro.modulos.apps.ModulosConfig',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +73,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'devpro.context_processors.listar_modulos',
             ],
         },
     },
@@ -85,6 +89,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        'CONN_MAX_AGE': 30,
+        'CONN_HEALTH_CHECK': True,
     }
 }
 
