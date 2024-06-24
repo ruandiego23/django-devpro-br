@@ -31,6 +31,7 @@ class Aula(models.Model):
     modulo = models.ForeignKey(Modulo, on_delete=models.PROTECT)
     criado_em = models.DateTimeField(auto_now_add=True)
     modificado_em = models.DateTimeField(auto_now=True)
+    iframe_id = models.CharField(max_length=50)
 
     class Meta:
         order_with_respect_to = "modulo"
