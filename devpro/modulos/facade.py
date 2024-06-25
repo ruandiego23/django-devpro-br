@@ -28,4 +28,4 @@ def encontrar_aula(slug):
     """
     Encontrar aula de acordo com o slug.
     """
-    return Aula.objects.get(slug=slug)
+    return Aula.objects.select_related('modulo').get(slug=slug)
