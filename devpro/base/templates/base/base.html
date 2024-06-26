@@ -36,7 +36,7 @@
                         {% for modulo in MODULOS %}
                             <li>
                                 <a class="dropdown-item" href="{{ modulo.get_absolute_url }}">
-                                {{ modulo.titulo | default:"Módulo sem título" }}
+                                    {{ modulo.titulo | default:"Módulo sem título" }}
                                 </a>
                             </li>
                         {% empty %}

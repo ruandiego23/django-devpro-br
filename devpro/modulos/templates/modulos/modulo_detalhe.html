@@ -1,6 +1,6 @@
 {% extends 'base/base.html' %}
 {% block title %}módulos{% endblock %}
-{% block description %}Página com seus módulos e respectivas aulas{% endblock %}
+{% block description %}Página com o modulo: "{{ modulo.titulo }}" e suas respectivas aulas{% endblock %}
 
 {% block content %}
     <div class="container">
@@ -21,9 +21,6 @@
                             <li><a class="mt-sm-2 mb-sm-2">Sem aulas</a></li>
                         {% endfor %}
                     </ol>
-                
-
-
             </div>
         </div>
     </div>

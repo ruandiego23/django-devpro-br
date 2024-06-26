@@ -1,5 +1,7 @@
 from typing import List
 
+from django.db.models import Prefetch
+
 from devpro.modulos.models import Modulo, Aula
 
 
@@ -29,3 +31,14 @@ def encontrar_aula(slug):
     Encontrar aula de acordo com o slug.
     """
     return Aula.objects.select_related('modulo').get(slug=slug)
+
+
+def listar_modulos_com_aulas():
+    """
+    Todos os módulos e suas respectivas aulas.
+    """
+    aulas_ordenadas = Aula.objects.order_by('-criado_em')
+    return (Modulo.objects.order_by('-criado_em').prefetch_related(
+        Prefetch(
+            'aula_set', queryset=aulas_ordenadas, to_attr='aulas')
+    ).all())
