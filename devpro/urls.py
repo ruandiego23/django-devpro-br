@@ -23,6 +23,7 @@ urlpatterns = [
     path('contas/', include('django.contrib.auth.urls')),
     path('', include('devpro.base.urls')),
     path('modulos/', include('devpro.modulos.urls')),
+    path('turmas/', include('devpro.turmas.urls')),
 ]
 
 if settings.DEBUG:

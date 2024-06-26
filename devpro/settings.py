@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'devpro.base.apps.BaseConfig',
     'devpro.modulos.apps.ModulosConfig',
+    'devpro.turmas.apps.TurmasConfig',
     'django_extensions',
 ]
 
