@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+{% block title %}módulos{% endblock %}
+{% block description %}Página com todos os módulos e respectivas aulas{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                {% for modulo in modulos %}
+                    <h1 class="mt-sm-4 mb-sm-3">{{ modulo.titulo }}</h1>
+                    <dl>
+                        <dt>Público</dt>
+                        <dd>{{ modulo.publico }}</dd>
+                        <dt>Descrição</dt>
+                        <dd>{{ modulo.descricao }}</dd>
+                    </dl>
+                    <h2 class="mt-sm-2 mb-sm-2">Aulas</h2>
+                    <ol>
+                        {% for aula in modulo.aulas %}
+                            <li><a class="mt-sm-2 mb-sm-2" href="{{ aula.get_absolute_url }}">{{ aula.titulo }}</a></li>
+                        {% empty %}
+                            <li><a class="mt-sm-2 mb-sm-2">Sem aulas</a></li>
+                        {% endfor %}
+                    </ol>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

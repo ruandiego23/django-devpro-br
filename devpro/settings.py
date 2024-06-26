@@ -28,7 +28,7 @@ DEBUG = True
 # Para poder usar o User customizado, ao invés do django.contrib.auth, é necessário declarar a variável AUTH_USER_MODEL
 AUTH_USER_MODEL = 'base.User'
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/modulos/'
 LOGOUT_REDIRECT_URL = '/'
 
 ALLOWED_HOSTS = [
