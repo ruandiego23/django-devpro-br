@@ -1,7 +1,42 @@
 {% extends 'base/base.html' %}
-{% block title %}home{% endblock %}
+{% block title %}Página Inicial{% endblock %}
 {% block description %}Site com aulas para aprender programação{% endblock %}
 
 {% block content %}
-	
+
+    <div class="container mt-sm-5 bg-light card border-dark">
+        <div class="row justify-content-center">
+            <div class="col">
+                <div id="mc_embed_shell">
+                    <div id="mc_embed_signup">
+                        <h3 class="mt-sm-3">Curso Dev Pro</h3>
+                        <form action="https://outlook.us18.list-manage.com/subscribe/post?u=d6bc9a8b1ec005a0dc782391a&amp;id=5990a6a1c2&amp;f_id=003fd5e0f0"
+                              method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                              class="validate"
+                              target="_self" novalidate="">
+                            <div class="mb-sm-3 col-sm-12">
+                                <label for="inputEmail4" class="form-label">Email</label>
+                                <input name="email" type="email" required="required" 
+                                       class="form-control required" id="inputEmail4"
+                                       placeholder="example@email.com">
+                            </div>
+                            <div class="mb-sm-3 col-sm-12">
+                                <label for="Nome" class="form-label">Nome Completo</label>
+                                <input name="first_name" type="text" class="form-control" id="Nome"
+                                       placeholder="Nome">
+                            </div>
+                            
+                            <div class="col-sm-8 mt-sm-4 mb-sm-3">
+                                <button type="submit" class="btn btn-primary">Entre na lista de espera</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
 {% endblock %}

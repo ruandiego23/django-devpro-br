@@ -1,0 +1,68 @@
+{% extends 'base/base.html' %}
+{% block title %}
+    Assine o curso
+{% endblock %}
+{% block description %}
+    Página de inscrição do curso Dev Pro
+{% endblock %}
+
+{% block content %}
+    
+    <div class="container mt-sm-4">
+        <form method="post" action="{% url 'base:sign_up' %}">
+            {% csrf_token %}
+            <div id="div_id_email" class="mb-sm-3">
+                <label 
+                    for="id_email" class="form-label requiredField">Email
+                    <span class="asteriskField">*</span> 
+                </label> 
+                <input value="" type="email" name="email" maxlength="320" class="emailinput form-control" required id="id_email">
+            </div>
+            <div id="div_id_password1" class="mb-sm-3">
+                <label
+                    for="id_password1" class="form-label requiredField">Senha
+                    <span class="asteriskField">*</span> 
+                </label> 
+                <input type="password" name="password1" autocomplete="new-password" class="passwordinput form-control" 
+                       required aria-describedby="id_password1_helptext" id="id_password1">
+                <div id="id_password1_helptext" class="form-text">
+                    <ul>
+                        <li>Sua senha não pode ter elementos similares a.</li>
+                        <li>Sua senha deve ter ao menos 8 caracteres.</li>
+                        <li>Sua senha não pode ser uma comum.</li>
+                        <li>Sua senha não pode ser inteiramente numérica.</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="div_id_password2" class="mb-sm-3">
+                <label
+                    for="id_password2" class="form-label requiredField">Escreva-a novamente
+                    <span class="asteriskField">*</span>
+                </label> 
+                <input type="password" name="password2" autocomplete="new-password" class="passwordinput form-control"
+                       required aria-describedby="id_password2_helptext" id="id_password2">
+                <div 
+                    id="id_password2_helptext" class="form-text">Digite a mesma senha, para verificação.
+                </div>
+            </div>
+            <div id="div_id_first_name" class="mb-sm-3">
+                <label
+                    for="id_first_name" class="form-label requiredField">Nome
+                    <span class="asteriskField">*</span> 
+                </label> <input type="text" name="first_name" class="textinput form-control" required 
+                                id="id_first_name">
+            </div>
+            <div id="div_id_last_name" class="mb-sm-3">
+                <label
+                    for="id_last_name" class="form-label requiredField">Sobrenome
+                    <span class="asteriskField">*</span> 
+                </label> <input type="text" name="last_name" class="textinput form-control" required
+                                id="id_last_name">
+            </div>
+
+            <p>Tem uma conta? Faça o login<a href="{% url 'login' %}"> Aqui</a></p>
+            <button type="submit" class="btn btn-success">Registre</button>
+        </form>
+    </div>
+    
+{% endblock %}

@@ -15,7 +15,7 @@ def test_home_status_code(response):
 
 
 def test_titulo_home(response):
-    assert_contains(response, '<title>home')
+    assert_contains(response, '<title>Página Inicial')
 
 
 def test_link_home(response):
