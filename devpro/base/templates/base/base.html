@@ -11,7 +11,7 @@
     <meta name="author" content="Diego">
     <meta name="description" content="{% block description %}{% endblock %}">
 
-    <link rel="stylesheet" crossorigin="anonymous" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" crossorigin="anonymous" href="{% static 'assets/css/bootstrap.css' %}">
     <script type="text/javascript" crossorigin="anonymous"
             src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
 </head>
@@ -52,6 +52,7 @@
                     <button class="btn btn-danger" type="submit">Sair</button>
                 </form>
             {% else %}
+                <a class="btn btn-primary me-sm-2" href="{% url 'base:sign_up' %}">Assinar</a>
                 <a class="btn btn-light" href="{% url 'login' %}">Entrar</a>
             {% endif %}
         </div>
